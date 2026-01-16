@@ -1,2 +1,82 @@
-#random site url
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# =========================
+# Environment variables
+# =========================
 .env
+.env.*
+*.env
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Jupyter / IPython
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Data & ML artifacts
+# =========================
+data/
+datasets/
+*.h5
+*.pkl
+*.joblib
+*.pt
+*.onnx
+
+# =========================
+# Images & media (generated)
+# =========================
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+
+# Uncomment if you WANT to track images
+# !assets/images/**
+
+# =========================
+# Build & cache
+# =========================
+build/
+dist/
+*.egg-info/
+.cache/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
+*.tmp
