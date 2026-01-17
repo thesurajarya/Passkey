@@ -7,7 +7,10 @@ import random
 
 load_dotenv() #from current directory
 url = os.getenv("site_url")
+key = os.getenv("dict")
 # print(url)
+# request url for image
+response = requests.get(url)
 
 def loadImage():
     try:
@@ -24,13 +27,11 @@ def imgArray(img_array):
     return normalizedImgArray
 # print(normalizedImgArray[0][1][0])
 
-# request url for image
-response = requests.get(url)
 
 def openImg():
     img = Image.open("source.jpg")
     img_array = np.array(img)
-    arr = {}
+    img.close()
     return img_array
 
 def matrixCalc(array, arr):
@@ -44,14 +45,27 @@ def matrixCalc(array, arr):
         for j in range(1, 600):
             finalArr += arr[(i, j)]
 
-    print(finalArr)
+    return finalArr
 
+def generatekey(ar_ray, length):
+    mean = (np.mean(ar_ray)).astype(int)
+    std = (np.std(ar_ray)).astype(int)
+    passkey = ""
+    passLength = f"{mean}{std}"
+    print("\nMean: ",mean)
+    print("Std: ",std)
+    # while(len(passkey) < 12):
+        
+    #     passkey += key[]
+    print("\nGenerated Passkey: ", passkey)
 def main():
     print("Generation phase 1 started...")
     loadImage()
     array = imgArray(openImg())
     arr = {}
-    matrixCalc(array,arr)
+    print("\nGeneration phase 2 started...")
+    generatekey(matrixCalc(array,arr), len(key))
+
 
 
 
